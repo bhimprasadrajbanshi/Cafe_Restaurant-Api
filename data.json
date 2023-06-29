@@ -1,11 +1,1 @@
-{
-    "12": {
-      "id": "12",
-      "food_item:": "Piza",
-      "price":200,
-      "costmerName":"sanepa",
-      "costomer_add": "ktm",
-      "pymentId": 12900,
-      "costomerPhone": 980000
-    }
-  }
+{"12":{"id":12,"food_item":"Piza","order_No":120,"Price":200,"costomer_name":"sanepa","costomer_add":"ktm","paymentNo":12900,"Costomer_phone":980000},"13":{"id":13,"food_item":"burger","order_no":145,"price":600,"costmerName":"Ram","costomer_add":"kupndole","pymentId":12990,"costomerPhone":98009000}}

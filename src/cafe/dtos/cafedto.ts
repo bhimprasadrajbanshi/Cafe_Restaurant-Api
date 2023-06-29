@@ -8,11 +8,11 @@ export class CreateCafeDto {
   @IsString()
   food_item:string;
 
-  @IsString()
-  Price: string;
+  @IsInt()
+  Price: number;
 
-  @IsString()
-  order_No: string;
+  @IsInt()
+  order_No: number;
 
   @IsString()
   costomer_name: string;
@@ -25,4 +25,22 @@ export class CreateCafeDto {
 
   @IsInt()
   Costomer_phone: number;
+}
+
+
+export class QueryDto{
+@IsInt()
+id:number;
+
+@IsString()
+costomer_name: string;
+
+@IsString()
+Gmail: string;
+
+@IsInt()
+Costomer_phone: number;
+
+@IsString()
+msg:string
 }

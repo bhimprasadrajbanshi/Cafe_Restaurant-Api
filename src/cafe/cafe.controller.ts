@@ -1,5 +1,5 @@
 import { Body, Controller, Get, Param, Post } from '@nestjs/common';
-import { CreateCafeDto } from './dtos/cafedto';
+import { CreateCafeDto, QueryDto } from './dtos/cafedto';
 import { CafeService } from 'src/cafe.service';
 
 @Controller('cafe')
@@ -20,10 +20,14 @@ export class CafeController {
     return this.cafeService.getAllOrder();
   }
 
-  @Post()
+  @Post('creatOrder')
   createNewOrder(@Body() cafe: CreateCafeDto) {
-    return this.cafeService.createFoodOrder(cafe) ;
-   /* return this.cafeService.createFoodOrder(cafe); */
+    return this.cafeService.createNewOrder(cafe) ;
+  }
+
+  @Post('Query')
+  chatQuery(@Body() query: QueryDto) {
+    return this.cafeService.chatQuery(query) ;
   }
 
 }

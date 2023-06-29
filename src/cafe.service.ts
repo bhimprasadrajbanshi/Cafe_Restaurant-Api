@@ -1,24 +1,28 @@
 import { CafeRepository } from './cafe.repository';
-import { CreateCafeDto } from './cafe/dtos/cafedto';
+import { CreateCafeDto, QueryDto } from './cafe/dtos/cafedto';
 
 
 export class CafeService {
-  cafeRepo: CafeRepository;
+  cafeRepository: CafeRepository;
 
   constructor() {
-    this.cafeRepo = new CafeRepository();
+    this.cafeRepository = new CafeRepository();
   }
  
   getOrderById(id: string) {
-    return this.cafeRepo.getOrderByID(id);
+    return this.cafeRepository.getOrderByID(id);
   }
   
   getAllOrder() {
-    return this.cafeRepo.getAllOrder();
+    return this.cafeRepository.getAllOrder();
   }
 
-  createFoodOrder(cafe: CreateCafeDto) {
-    return this.cafeRepo.createNewOrder(cafe);
+  createNewOrder(cafe: CreateCafeDto) {
+    return this.cafeRepository.createNewOrder(cafe);
+  }
+
+  chatQuery(data: QueryDto) {
+    return this.cafeRepository.chatQuery(data);
   }
 
 }
