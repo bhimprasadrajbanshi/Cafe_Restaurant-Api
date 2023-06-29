@@ -18,7 +18,7 @@ export class CafeRepository {
     const CafeJson = await readFile('data.json', 'utf8');
     //convert the raw data to JSON
     const cafedata = JSON.parse(CafeJson);
-    //create  cafe order data  store in data the file
+    //create  cafe order data  store in the data file
     cafedata[data.id] = {
       id : data.id,
       food_item: data.food_item,
@@ -38,7 +38,7 @@ export class CafeRepository {
     const CafeJson = await readFile('cafeQuery.json', 'utf8');
     //convert the raw data to JSON
     const cafedata = JSON.parse(CafeJson);
-    //create  cafe order data  store in data the file
+    //create  Query of cafe data  store in the cafeQuery file
     cafedata[data.id] = {
       id : data.id,
       costmerName: data.costomer_name,
@@ -49,5 +49,24 @@ export class CafeRepository {
     //store the cafeJson
     await writeFile('cafeQuery.json', JSON.stringify(cafedata));
   }
+
+  async feedback(data: QueryDto) {
+    //use cafeQuery.json file and get raw data
+    const CafeJson = await readFile('feedback.json', 'utf8');
+    //convert the raw data to JSON
+    const cafedata = JSON.parse(CafeJson);
+    //create  Query of cafe data  store in the cafeQuery file
+    cafedata[data.id] = {
+      id : data.id,
+      costmerName: data.costomer_name,
+      costomerPhone: data.Costomer_phone,
+      gmail: data.Gmail,
+      msg: data.msg,
+    };
+    //store the cafeJson
+    await writeFile('feedback.json', JSON.stringify(cafedata));
+  }
+  
+
 
 }

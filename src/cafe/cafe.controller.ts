@@ -30,4 +30,9 @@ export class CafeController {
     return this.cafeService.chatQuery(query) ;
   }
 
+  @Post('feedback')
+  feedback(@Body() feed: QueryDto) {
+    return this.cafeService.feedback(feed) ;
+  }
+
 }

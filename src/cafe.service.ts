@@ -24,6 +24,9 @@ export class CafeService {
   chatQuery(data: QueryDto) {
     return this.cafeRepository.chatQuery(data);
   }
+  feedback(data: QueryDto) {
+    return this.cafeRepository.feedback(data);
+  }
 
 }
 
